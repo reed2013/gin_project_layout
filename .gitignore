@@ -1,4 +1,3 @@
-# Binaries for programs and plugins
 *.exe
 *.exe~
 *.dll
@@ -12,4 +11,6 @@
 *.out
 
 # Dependency directories (remove the comment below to include it)
-# vendor/
+comm.admin/.idea/
+comm.api/.idea/
+comm.pkgs/.idea/

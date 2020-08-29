@@ -1,0 +1,18 @@
+Master:
+  UserName: root
+  Password: 123456
+  Host: 127.0.0.1
+  DbName: common_project
+  Charset: utf8mb4
+  ParseTime: True
+  MaxIdleConns: 10
+  MaxOpenConns: 30
+Slaves:
+  - UserName: root
+    Password: 123456
+    Host: 127.0.0.1:3306
+    DbName: common_project
+    Charset: utf8mb4
+    ParseTime: True
+    MaxIdleConns: 10
+    MaxOpenConns: 30
