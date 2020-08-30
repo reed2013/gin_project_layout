@@ -1,0 +1,4 @@
+2020-08-30T09:39:25.537+0800	ERROR	global/init.go:25	master db conn error
+2020-08-30T09:39:27.540+0800	ERROR	global/init.go:28	master redis conn error
+{"level":"ERROR","ts":"2020-08-30T09:41:17.528+0800","caller":"global/init.go:25","msg":"master db conn error"}
+{"level":"ERROR","ts":"2020-08-30T09:41:19.529+0800","caller":"global/init.go:28","msg":"master redis conn error"}

@@ -2,6 +2,7 @@ package db
 
 import (
 	"comm.pkgs/config"
+	"errors"
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
@@ -39,10 +40,12 @@ var SingletonDB *DB
 var once sync.Once
 var masterConf Conf
 var slaveConf []Conf
+var masterConnErr error
+var slaveConnErrs []error
 
 func NewDB() error {
-	var err error
 	once.Do(func(){
+		var err error
 		SingletonDB = &DB{}
 		SingletonDB.MasterDB , err = gorm.Open("mysql", fmt.Sprintf("%s:%s@(%s)/%s?charset=%s&parseTime=%t&loc=Local",
 			masterConf.UserName,
@@ -53,14 +56,14 @@ func NewDB() error {
 			masterConf.ParseTime,
 		))
 		if nil != err {
-			log.Fatal(err)
+			masterConnErr = err
 		}
 
 		slaveSize := len(slaveConf)
 		SingletonDB.SlaveDB = make([]*gorm.DB, slaveSize)
+		slaveConnErrs = make([]error, slaveSize)
 		if slaveSize > 0 {
 			for i := 0; i < slaveSize; i++ {
-				fmt.Println(i, SingletonDB.SlaveDB[i])
 				SingletonDB.SlaveDB[i], err = gorm.Open("mysql", fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=%s&parseTime=%t&loc=Local",
 					slaveConf[i].UserName,
 					slaveConf[i].Password,
@@ -69,9 +72,19 @@ func NewDB() error {
 					slaveConf[i].Charset,
 					slaveConf[i].ParseTime,
 				))
+				if err != nil {
+					slaveConnErrs[i] = err
+				}
 			}
 		}
 	})
+
+	if masterConnErr != nil {
+		return errors.New("master db conn error")
+	}
+	if len(slaveConnErrs) > 1 {
+		return errors.New("slave db conn error")
+	}
 
 	return nil
 }

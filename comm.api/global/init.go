@@ -4,8 +4,12 @@ import (
 	"comm.api/configs"
 	"comm.pkgs/db"
 	"comm.pkgs/redis"
+	"comm.pkgs/zlog"
 	"log"
 )
+
+//const BASE_DIR  = "D:/gocode/src/gin_project_layout/comm.api/"
+const LogDir = "D:/gocode/src/gin_project_layout/comm.api/storage/logs/"
 
 var (
 	ServerConf *configs.ServerConf
@@ -13,17 +17,17 @@ var (
 )
 
 func Init() {
+	zlog.NewLogger(LogDir + "api.log")
 	if err := InitConfig(); err != nil {
-		log.Fatal(err)
+		zlog.SugarLogger().Error(err)
 	}
-	if err := InitDb(); err != nil {
-		log.Fatal(err)
+	if err := db.NewDB(); err != nil {
+		zlog.SugarLogger().Error(err)
 	}
-	/*
-	if err := InitRedis(); err != nil {
-		log.Fatal(err)
+	if err := redis.NewRedis(); err != nil {
+		zlog.SugarLogger().Error(err)
 	}
-	*/
+
 }
 
 func InitConfig() error {
@@ -39,22 +43,6 @@ func InitConfig() error {
 		return err
 	}
 	log.Println("server conf: ", AppConf)
-
-	return nil
-}
-
-func InitDb() error {
-	if err := db.NewDB(); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func InitRedis() error {
-	if err := redis.NewRedis(); err != nil {
-		return err
-	}
 
 	return nil
 }
