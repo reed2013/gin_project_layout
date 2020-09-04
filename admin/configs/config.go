@@ -1,7 +1,7 @@
 package configs
 
 import (
-	"comm.dev/pkgs/config"
+	"github.com/reed2013/gin_project_layout/pkgs/config"
 	"time"
 )
 

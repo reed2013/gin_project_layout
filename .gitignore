@@ -11,6 +11,4 @@
 *.out
 
 # Dependency directories (remove the comment below to include it)
-comm.admin/.idea/
-comm.api/.idea/
-comm.pkgs/.idea/
+.idea/

@@ -1,15 +1,15 @@
 package global
 
 import (
-	"comm.api/configs"
-	"comm.pkgs/db"
-	"comm.pkgs/redis"
-	"comm.pkgs/zlog"
+	"github.com/reed2013/gin_project_layout/configs"
+	"github.com/reed2013/gin_project_layout/pkgs/db"
+	"github.com/reed2013/gin_project_layout/pkgs/redis"
+	"github.com/reed2013/gin_project_layout/pkgs/zlog"
 	"log"
 )
 
-//const BASE_DIR  = "D:/gocode/src/gin_project_layout/comm.api/"
-const LogDir = "D:/gocode/src/gin_project_layout/comm.api/storage/logs/"
+//const BASE_DIR  = "D:/gocode/src/gin_project_layout/github.com/reed2013/gin_project_layout/"
+const LogDir = "D:/gocode/src/gin_project_layout/github.com/reed2013/gin_project_layout/storage/logs/"
 
 var (
 	ServerConf *configs.ServerConf

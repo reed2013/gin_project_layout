@@ -1,7 +1,7 @@
 package redis
 
 import (
-	"comm.pkgs/config"
+	"github.com/reed2013/gin_project_layout/pkgs/config"
 	"context"
 	"errors"
 	"github.com/go-redis/redis/v8"
@@ -82,7 +82,7 @@ func InitConf() error {
 	var err error
 	var ConfigManager *config.Config
 	var configPath string
-	if configPath, err = filepath.Abs("../../comm.pkgs/redis/"); err != nil {
+	if configPath, err = filepath.Abs("../../pkgs/redis/"); err != nil {
 		log.Fatal(err)
 	}
 	if ConfigManager, err = config.NewConfig(configPath, "config", "yaml"); err != nil {

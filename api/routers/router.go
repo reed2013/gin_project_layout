@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"comm.api/controllers"
+	"github.com/reed2013/gin_project_layout/controllers"
 	"github.com/gin-gonic/gin"
 )
 

@@ -1,4 +1,4 @@
-module comm.pkgs
+module github.com/reed2013/gin_project_layout/pkgs
 
 go 1.14
 

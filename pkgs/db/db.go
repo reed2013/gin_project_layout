@@ -1,11 +1,11 @@
 package db
 
 import (
-	"comm.pkgs/config"
 	"errors"
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
+	"github.com/reed2013/gin_project_layout/pkgs/config"
 	"log"
 	"math/rand"
 	"path/filepath"
@@ -93,7 +93,7 @@ func InitConf() error {
 	var err error
 	var ConfigManager *config.Config
 	var configPath string
-	if configPath, err = filepath.Abs("../../comm.pkgs/db/"); err != nil {
+	if configPath, err = filepath.Abs("../../pkgs/db/"); err != nil {
 		log.Fatal(err)
 	}
 	if ConfigManager, err = config.NewConfig(configPath, "config", "yaml"); err != nil {

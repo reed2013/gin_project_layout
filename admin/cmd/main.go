@@ -1,9 +1,9 @@
 package main
 
 import (
-	"comm.api/global"
-	"comm.api/routers"
 	"github.com/gin-gonic/gin"
+	"github.com/reed2013/gin_project_layout/api/global"
+	"github.com/reed2013/gin_project_layout/api/routers"
 	"log"
 	"net/http"
 )

@@ -1,9 +1,9 @@
 package global
 
 import (
-	"comm.dev/api/configs"
-	"comm.dev/pkgs/db"
-	"comm.dev/pkgs/redis"
+	"github.com/reed2013/gin_project_layout/api/configs"
+	"github.com/reed2013/gin_project_layout/pkgs/db"
+	"github.com/reed2013/gin_project_layout/pkgs/redis"
 	_ "github.com/go-sql-driver/mysql"
 	"log"
 )
