@@ -2,8 +2,8 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/reed2013/gin_project_layout/global"
-	"github.com/reed2013/gin_project_layout/routers"
+	"github.com/reed2013/gin_project_layout/api/global"
+	"github.com/reed2013/gin_project_layout/api/routers"
 	"log"
 	"net/http"
 )

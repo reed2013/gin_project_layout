@@ -1,7 +1,7 @@
 package global
 
 import (
-	"github.com/reed2013/gin_project_layout/configs"
+	"github.com/reed2013/gin_project_layout/api/configs"
 	"github.com/reed2013/gin_project_layout/pkgs/db"
 	"github.com/reed2013/gin_project_layout/pkgs/redis"
 	"github.com/reed2013/gin_project_layout/pkgs/zlog"
@@ -9,7 +9,7 @@ import (
 )
 
 //const BASE_DIR  = "D:/gocode/src/gin_project_layout/github.com/reed2013/gin_project_layout/"
-const LogDir = "D:/gocode/src/gin_project_layout/github.com/reed2013/gin_project_layout/storage/logs/"
+const LogDir = "D:/gocode/src/gin_project_layout/api/storage/logs/"
 
 var (
 	ServerConf *configs.ServerConf
