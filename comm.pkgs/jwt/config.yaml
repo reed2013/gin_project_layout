@@ -1,0 +1,4 @@
+JWT:
+  Secret: lmcloudgame
+  Issuer: CloudGameApi
+  Expire: 7200
