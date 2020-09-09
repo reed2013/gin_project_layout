@@ -1,9 +1,9 @@
 package controllers
 
 import (
+	"github.com/gin-gonic/gin"
 	"github.com/reed2013/gin_project_layout/pkgs/common/models"
 	"github.com/reed2013/gin_project_layout/pkgs/db"
-	"github.com/gin-gonic/gin"
 	"log"
 )
 

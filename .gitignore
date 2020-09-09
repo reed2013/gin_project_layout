@@ -13,3 +13,6 @@
 # Dependency directories (remove the comment below to include it)
 .idea/
 api/storage
+api/.idea/
+admin/.idea/
+pkgs/.idea/
